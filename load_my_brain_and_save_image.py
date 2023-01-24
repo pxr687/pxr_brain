@@ -12,7 +12,9 @@ brain_vol_data = brain_vol.get_fdata()
 
 # show the data and save the image as .jpg
 plt.figure(figsize = (10, 10))
-plt.imshow(ndi.rotate(brain_vol_data[105], 90), cmap="bone")
+plt.imshow(ndi.rotate(brain_vol_data[105], 90), cmap="bone");
 plt.axis("off")
+# save a large .jpg image
 plt.savefig("pxr_brain.jpg", format="jpg", dpi = 1200)
-plt.show()
+# save a small .jpg image (dpi set so resulting image is < 1mb)
+plt.savefig("pxr_brain_below_1mb.jpg", format="jpg", dpi = 440)
